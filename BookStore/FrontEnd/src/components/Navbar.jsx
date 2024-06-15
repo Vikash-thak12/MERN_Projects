@@ -29,11 +29,11 @@
 
         return (
             <>
-                <div className={`max-w-screen-xl container mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
+                <div className={`container mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
                     ${sticky
-                        ? "sticky-navbar shadow-md bg-base-300 duration-all transition-all ease-in-out"
+                        ? "sticky-navbar shadow-md bg-gray-700 duration-all transition-all ease-in-out"
                         : ""}`}>
-                    <div className="navbar flex justify-between">
+                    <div className="navbar flex justify-between px-10">
                         <div className="navbar-start">
                             <div className="dropdown">
                                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

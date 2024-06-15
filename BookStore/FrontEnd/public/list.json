@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Harper Lee",
+      "title": "To Kill a Mockingbird",
+      "price": 18.99,
+      "category": "Fiction"
+    },
+    {
+      "id": 2,
+      "name": "George Orwell",
+      "title": "1984",
+      "price": 15.99,
+      "category": "Dystopian"
+    },
+    {
+      "id": 3,
+      "name": "J.K. Rowling",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "price": 22.99,
+      "category": "Fantasy"
+    },
+    {
+      "id": 4,
+      "name": "J.R.R. Tolkien",
+      "title": "The Hobbit",
+      "price": 14.99,
+      "category": "Fantasy"
+    },
+    {
+      "id": 5,
+      "name": "F. Scott Fitzgerald",
+      "title": "The Great Gatsby",
+      "price": 10.99,
+      "category": "Classic"
+    }
+  ]
+  
