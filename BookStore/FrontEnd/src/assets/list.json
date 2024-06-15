@@ -12,7 +12,7 @@
       "name": "George Orwell",
       "title": "1984",
       "price": 15.99,
-      "category": "Free",
+      "category": "Fiction",
       "description": "A chilling prophecy about the future, depicting a totalitarian society under constant surveillance."
     },
     {
@@ -28,7 +28,7 @@
       "name": "J.R.R. Tolkien",
       "title": "The Hobbit",
       "price": 14.99,
-      "category": "Free",
+      "category": "Fantasy",
       "description": "A prelude to The Lord of the Rings, following Bilbo Baggins on a journey filled with magic and danger."
     },
     {
@@ -44,7 +44,7 @@
       "name": "Mary Shelley",
       "title": "Frankenstein",
       "price": 12.99,
-      "category": "Free",
+      "category": "Fiction",
       "description": "A Gothic novel about a scientist who creates a sentient being, exploring themes of ambition and isolation."
     },
     {
@@ -76,7 +76,7 @@
       "name": "Charlotte Brontë",
       "title": "Jane Eyre",
       "price": 14.99,
-      "category": "Free",
+      "category": "Fantasy",
       "description": "A novel following the experiences of its eponymous heroine, including her growth to adulthood and her love for Mr. Rochester."
     },
     {
