@@ -5,7 +5,8 @@
       "title": "To Kill a Mockingbird",
       "price": 18.99,
       "category": "Free",
-      "description": "A novel about the serious issues of rape and racial inequality set in the 1930s."
+      "description": "A novel about the serious issues of rape and racial inequality set in the 1930s.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "title": "1984",
       "price": 15.99,
       "category": "Fiction",
-      "description": "A chilling prophecy about the future, depicting a totalitarian society under constant surveillance."
+      "description": "A chilling prophecy about the future, depicting a totalitarian society under constant surveillance.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "title": "Harry Potter and the Philosopher's Stone",
       "price": 22.99,
       "category": "Free",
-      "description": "The first book in the Harry Potter series, introducing the young wizard and his adventures at Hogwarts."
+      "description": "The first book in the Harry Potter series, introducing the young wizard and his adventures at Hogwarts.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 4,
@@ -29,7 +32,8 @@
       "title": "The Hobbit",
       "price": 14.99,
       "category": "Fantasy",
-      "description": "A prelude to The Lord of the Rings, following Bilbo Baggins on a journey filled with magic and danger."
+      "description": "A prelude to The Lord of the Rings, following Bilbo Baggins on a journey filled with magic and danger.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 5,
@@ -37,7 +41,8 @@
       "title": "The Great Gatsby",
       "price": 10.99,
       "category": "Free",
-      "description": "A story about the American dream and the disillusionment that comes with it, set in the 1920s."
+      "description": "A story about the American dream and the disillusionment that comes with it, set in the 1920s.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 6,
@@ -45,7 +50,8 @@
       "title": "Frankenstein",
       "price": 12.99,
       "category": "Fiction",
-      "description": "A Gothic novel about a scientist who creates a sentient being, exploring themes of ambition and isolation."
+      "description": "A Gothic novel about a scientist who creates a sentient being, exploring themes of ambition and isolation.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 7,
@@ -53,7 +59,8 @@
       "title": "Pride and Prejudice",
       "price": 11.99,
       "category": "Free",
-      "description": "A romantic novel that also critiques the British landed gentry at the end of the 18th century."
+      "description": "A romantic novel that also critiques the British landed gentry at the end of the 18th century.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 8,
@@ -61,7 +68,8 @@
       "title": "The Adventures of Huckleberry Finn",
       "price": 13.99,
       "category": "Free",
-      "description": "A novel about the adventures of a young boy and a runaway slave as they travel down the Mississippi River."
+      "description": "A novel about the adventures of a young boy and a runaway slave as they travel down the Mississippi River.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 9,
@@ -69,7 +77,8 @@
       "title": "Moby-Dick",
       "price": 16.99,
       "category": "Free",
-      "description": "An epic tale of the voyage of the whaling ship Pequod, led by Captain Ahab who is intent on finding the white whale Moby-Dick."
+      "description": "An epic tale of the voyage of the whaling ship Pequod, led by Captain Ahab who is intent on finding the white whale Moby-Dick.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 10,
@@ -77,7 +86,8 @@
       "title": "Jane Eyre",
       "price": 14.99,
       "category": "Fantasy",
-      "description": "A novel following the experiences of its eponymous heroine, including her growth to adulthood and her love for Mr. Rochester."
+      "description": "A novel following the experiences of its eponymous heroine, including her growth to adulthood and her love for Mr. Rochester.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 11,
@@ -85,7 +95,8 @@
       "title": "War and Peace",
       "price": 19.99,
       "category": "Free",
-      "description": "A historical novel that chronicles the history of the French invasion of Russia and the impact of the Napoleonic era."
+      "description": "A historical novel that chronicles the history of the French invasion of Russia and the impact of the Napoleonic era.",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
   

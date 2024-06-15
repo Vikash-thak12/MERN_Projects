@@ -3,13 +3,16 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import list from "../assets/list.json"
+import Cards from "./Cards";
 
 const FreeBook = () => {
+
+    const filterData = list.filter((data) => data.category === "Free")
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 4,
         initialSlide: 0,
         responsive: [
@@ -40,36 +43,15 @@ const FreeBook = () => {
         ]
     };
 
-    const filterData = list.filter((data) => data.category === "Free")
+
 
     return (
         <>
-            <div className="max-w-screen-xl container mx-auto md:px-10 px-4  m-10">
+            <div className="max-w-screen-xl container mx-auto md:px-10 px-4">
                 <Slider {...settings}>
-                    <div>
-                        <h3>1</h3>
-                    </div>
-                    <div>
-                        <h3>2</h3>
-                    </div>
-                    <div>
-                        <h3>3</h3>
-                    </div>
-                    <div>
-                        <h3>4</h3>
-                    </div>
-                    <div>
-                        <h3>5</h3>
-                    </div>
-                    <div>
-                        <h3>6</h3>
-                    </div>
-                    <div>
-                        <h3>7</h3>
-                    </div>
-                    <div>
-                        <h3>8</h3>
-                    </div>
+                    {filterData.map((item) => (
+                        <Cards item={item} key={item.id} />
+                    ))}
                 </Slider>
             </div>
         </>
