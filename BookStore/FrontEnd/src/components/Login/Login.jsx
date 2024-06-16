@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -23,7 +23,7 @@ const Login = () => {
                     </div>
                     <div className='flex justify-around mt-4'>
                         <button className='px-4 py-2 rounded-md bg-pink-500 text-white hover:bg-pink-800 duration-200'>Login</button>
-                        <p>Not Registered? <span className='underline text-blue-500 cursor-pointer'>signup</span></p>
+                        <p>Not Registered? <Link to="/signup" className='underline text-blue-500 cursor-pointer'>signup</Link></p>
                     </div>
                 </div>
             </dialog>
