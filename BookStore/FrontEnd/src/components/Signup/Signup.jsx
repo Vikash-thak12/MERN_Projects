@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 
 const Signup = () => {
     return (
-        <>
-            <div id="my_modal_3" className="h-screen flex align-middle justify-center">
+        <div>
+            <div className="h-screen flex items-center justify-center">
                 <div className="modal-box border">
                     <div className="">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            <Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Link>
                         </form>
                         <h3 className="font-bold text-lg mb-4">Sign Up</h3>
                         <div className='space-y-6'>
@@ -29,12 +30,14 @@ const Signup = () => {
                         </div>
                         <div className='flex justify-around mt-4'>
                             <button className='px-4 py-2 rounded-md bg-pink-500 text-white hover:bg-pink-800 duration-200'>Sign Up</button>
-                            <p>Have Account. <Link to="/" className='underline text-blue-500 cursor-pointer'>Login</Link></p>
+                            <p>Have Account.{" "} <button onClick={() => document.getElementById('my_modal_3').showModal()} className='underline text-blue-500 cursor-pointer'>Login</button>{" "}
+                                <Login />
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
