@@ -6,8 +6,7 @@
       "price": 18.99,
       "category": "Free",
       "description": "A novel about the serious issues of rape and racial inequality set in the 1930s.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 2,
       "name": "George Orwell",
@@ -15,8 +14,7 @@
       "price": 15.99,
       "category": "Fiction",
       "description": "A chilling prophecy about the future, depicting a totalitarian society under constant surveillance.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 3,
       "name": "J.K. Rowling",
@@ -24,8 +22,7 @@
       "price": 22.99,
       "category": "Free",
       "description": "The first book in the Harry Potter series, introducing the young wizard and his adventures at Hogwarts.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 4,
       "name": "J.R.R. Tolkien",
@@ -33,8 +30,7 @@
       "price": 14.99,
       "category": "Fantasy",
       "description": "A prelude to The Lord of the Rings, following Bilbo Baggins on a journey filled with magic and danger.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 5,
       "name": "F. Scott Fitzgerald",
@@ -42,8 +38,7 @@
       "price": 10.99,
       "category": "Free",
       "description": "A story about the American dream and the disillusionment that comes with it, set in the 1920s.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 6,
       "name": "Mary Shelley",
@@ -51,8 +46,7 @@
       "price": 12.99,
       "category": "Fiction",
       "description": "A Gothic novel about a scientist who creates a sentient being, exploring themes of ambition and isolation.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 7,
       "name": "Jane Austen",
@@ -60,7 +54,7 @@
       "price": 11.99,
       "category": "Free",
       "description": "A romantic novel that also critiques the British landed gentry at the end of the 18th century.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"
     },
     {
       "id": 8,
@@ -69,8 +63,7 @@
       "price": 13.99,
       "category": "Free",
       "description": "A novel about the adventures of a young boy and a runaway slave as they travel down the Mississippi River.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 9,
       "name": "Herman Melville",
@@ -78,8 +71,7 @@
       "price": 16.99,
       "category": "Free",
       "description": "An epic tale of the voyage of the whaling ship Pequod, led by Captain Ahab who is intent on finding the white whale Moby-Dick.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 10,
       "name": "Charlotte Brontë",
@@ -87,8 +79,7 @@
       "price": 14.99,
       "category": "Fantasy",
       "description": "A novel following the experiences of its eponymous heroine, including her growth to adulthood and her love for Mr. Rochester.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    },
     {
       "id": 11,
       "name": "Leo Tolstoy",
@@ -96,7 +87,6 @@
       "price": 19.99,
       "category": "Free",
       "description": "A historical novel that chronicles the history of the French invasion of Russia and the impact of the Napoleonic era.",
-      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1718524129~exp=1718527729~hmac=9e02e06f6ff28a68a2feabf1f5d99181ced3163d27b657fa074194a09a73e4c4&w=740"    }
   ]
   

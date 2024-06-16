@@ -1,10 +1,11 @@
 // import React from 'react';
+import "./Cards.css"
 
 const Cards = ( {item}) => {
     return (
         <div className="">
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src={item.image} alt="Shoes" /></figure>
+                <div className="rounded-lg image"><img src={item.image} /></div>
                 <div className="card-body">
                     <h2 className="card-title">
                         {item.title}

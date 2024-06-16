@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import list from "../assets/list.json"
-import Cards from "./Cards";
+import Cards from "./Cards/Cards";
 
 const FreeBook = () => {
 
