@@ -2,10 +2,10 @@
     /* border: 2px solid white; */
     padding: 10px;
 }
-.card:hover {
+/* .card:hover {
     transform: scale(1.01);
     transition: .5s ease-in-out;
-}
+} */
 
 .image img {
    /* border-radius: 20px; */

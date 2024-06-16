@@ -1,11 +1,12 @@
     import { useEffect, useState } from "react";
+import Login from "./Login/Login";
 
     const Navbar = () => {
         const navItems = (
             <>
-                <li><a>Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a>About</a></li>
-                <li><a>Course</a></li>
+                <li><a href="/course">Course</a></li>
                 <li><a>Contact</a></li>
             </>
         )
@@ -73,7 +74,10 @@
                                 </label>
                             </div>
                             <div>
-                                <a className="px-4 py-2 cursor-pointer bg-black rounded-lg text-xl hover:bg-gray-700">Login</a>
+                                <a 
+                                className="px-4 py-2 cursor-pointer bg-black rounded-lg text-xl hover:bg-gray-700" 
+                                onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
+                                <Login />
                             </div>
                         </div>
                     </div>
