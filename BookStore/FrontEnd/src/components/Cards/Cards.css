@@ -1,14 +1,25 @@
+.card {
+    /* border: 2px solid white; */
+    padding: 10px;
+}
+.card:hover {
+    transform: scale(1.01);
+    transition: .5s ease-in-out;
+}
+
 .image img {
    /* border-radius: 20px; */
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
 }
 
 .card-body {
-    background-color: aqua;
+    /* background-color: aqua; */
     max-height: 60vh;
 }
 
 .card-body h2 {
-    background-color: green;
+    /* background-color: green; */
     min-height: 60px;
     display: flex;
     align-items: flex-start;

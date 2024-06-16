@@ -29,7 +29,7 @@
 
         return (
             <>
-                <div className={`container mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
+                <div className={`container z-50 mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
                     ${sticky
                         ? "sticky-navbar shadow-md bg-gray-700 duration-all transition-all ease-in-out"
                         : ""}`}>
