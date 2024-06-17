@@ -19,15 +19,15 @@ try {
 } catch (error) {
   console.log("Error: ", error);
 }
-try {
-  mongoose.connect(URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  console.log("MongoDB Connected:");
-} catch (error) {
-  console.log("Error: ", error);
-}
+// try {
+//   mongoose.connect(URL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
+//   console.log("MongoDB Connected:");
+// } catch (error) {
+//   console.log("Error: ", error);
+// }
 
 
 app.listen(PORT, () => {
