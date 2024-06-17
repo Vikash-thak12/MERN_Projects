@@ -10,7 +10,7 @@ export const signup = async (req, res) => {
             return res.status(400).json({ Message: "User Already exist"})
         }
 
-        const hashPassword = await bcryptjs.hash(password, 10)
+        const hashPassword = await bcryptjs.hash(password, 10)  // for securing the password, use bcryptjs for hashing the password
         // If user is not there in the database then creating new one 
         const createUser = new User({
             fullname: fullname, 
@@ -23,4 +23,8 @@ export const signup = async (req, res) => {
         console.log("Error :", error);
         res.status(500).json({ Message: "Internal server Error"})
     }
+}
+
+export const login = async (req, res) => {
+    
 }
