@@ -1,4 +1,4 @@
-import User from "../model/user.model";
+import User from "../model/user.model.js";
 
 export const signup = async (req, res) => {
     try {
@@ -15,7 +15,7 @@ export const signup = async (req, res) => {
         createUser.save();
         res.status(201).json({Message: "User created Successfully"})
     } catch (error) {
-        console.log(Error);
+        console.log("Error :", error);
         res.status(500).json({ Message: "Internal server Error"})
     }
 }
