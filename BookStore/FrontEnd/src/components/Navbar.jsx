@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Login from "./Login/Login";
 import { useAuth } from "../context/AuthProvider";
+import Logout from "./Logout";
 
     const Navbar = () => {
 
         const [authUser, setAuthUser] = useAuth();
-        console.log(authUser)
+        // console.log(authUser)
 
 
         const navItems = (
@@ -79,12 +80,15 @@ import { useAuth } from "../context/AuthProvider";
 
                                 </label>
                             </div>
+                            {
+                                authUser? <Logout /> :
                             <div>
                                 <a 
                                 className="px-4 py-2 cursor-pointer bg-black rounded-lg text-xl hover:bg-gray-700" 
                                 onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
                                 <Login />
                             </div>
+                            }
                         </div>
                     </div>
                 </div>

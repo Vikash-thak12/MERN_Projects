@@ -23,7 +23,11 @@ const Login = () => {
                     // alert("User LoggedIn successfully")
                     toast.success("User LoggedIn successfully");
                 }
-                localStorage.setItem("users", JSON.stringify(res.data.user))
+                localStorage.setItem("users", JSON.stringify(res.data.user));
+                setTimeout(() => {
+                    window.location.reload(); 
+                }, 500);
+
             })
             .catch((err) => {
                 if(err.response) {

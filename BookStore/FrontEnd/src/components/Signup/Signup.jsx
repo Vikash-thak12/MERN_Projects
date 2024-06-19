@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "../Login/Login";
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 import toast from "react-hot-toast";
 const Signup = () => {
+
+    // const navigate = use Navigate();
+    const navigate = useNavigate()
 
     const {
         register,
@@ -26,6 +29,11 @@ const Signup = () => {
                     toast.success("User created successfully");
                 }
                 localStorage.setItem("users", JSON.stringify(res.data.user))
+                navigate("/")
+                setTimeout(() => {
+                    window.location.reload();
+                },);
+
             })
             .catch((err) => {
                 if(err.response) {
