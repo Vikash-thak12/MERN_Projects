@@ -45,5 +45,6 @@ export const login = async (req, res) => {
         }
     } catch (error) {
         console.log("Error:", error)
+        res.status(500).json({ Message: "Internal Server Error"})
     }
 }
