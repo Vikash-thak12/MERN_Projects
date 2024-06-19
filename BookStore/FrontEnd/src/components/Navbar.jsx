@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import Login from "./Login/Login";
+import { useAuth } from "../context/AuthProvider";
 
     const Navbar = () => {
+
+        const [authUser, setAuthUser] = useAuth();
+        console.log(authUser)
+
+
         const navItems = (
             <>
                 <li><a href="/">Home</a></li>
