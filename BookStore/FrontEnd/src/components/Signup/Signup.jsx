@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Login from "../Login/Login";
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 const Signup = () => {
 
     const {
@@ -9,7 +10,26 @@ const Signup = () => {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password
+        }
+        // console.log(userInfo)
+        await axios.post("http://localhost:8001/user/signup", userInfo)
+            .then((res) => {
+                console.log(res.data)
+                if (res.data) {
+                    alert("User created successfully")
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+                alert("Error", err)
+            })
+        // console.log(data);
+    }
 
 
     return (
@@ -23,9 +43,9 @@ const Signup = () => {
                             <h3 className="font-bold text-lg mb-4">Sign Up</h3>
                             <div className='space-y-6'>
                                 <div className='space-y-1'>
-                                    <label htmlFor='Name'>Full Name</label>
-                                    <input {...register("name", { required: true })} type="text" placeholder="Enter your Name" className="input input-bordered w-full" />
-                                    {errors.name && <span className='text-xs text-red-500'>This field is required</span>}
+                                    <label htmlFor='fullname'>Full Name</label>
+                                    <input {...register("fullname", { required: true })} type="text" placeholder="Enter your Name" className="input input-bordered w-full" />
+                                    {errors.fullname && <span className='text-xs text-red-500'>This field is required</span>}
                                 </div>
 
                                 <div className='space-y-1'>
