@@ -11,7 +11,7 @@ import { useAuth } from './context/AuthProvider'
 function App() {
 
   const [authUser, setAuthUser] = useAuth()
-  console.log(authUser)
+  // console.log(authUser)
 
   return (
     <>
