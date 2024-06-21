@@ -2,71 +2,90 @@ import { useEffect, useState } from "react";
 import Login from "./Login/Login";
 import { useAuth } from "../context/AuthProvider";
 import Logout from "./Logout";
+import axios from "axios";
 
-    const Navbar = () => {
+const Navbar = ({ setSearchResults }) => {
 
-        const [authUser, setAuthUser] = useAuth();
-        // console.log(authUser)
+    const [authUser, setAuthUser] = useAuth();
+    // console.log(authUser)
+
+    const [searchQuery, setSearchQuery] = useState("");
+    // const [searchResults, setSearchResults] = useState([]);
 
 
-        const navItems = (
-            <>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/course">Course</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </>
-        )
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get("http://localhost:8001/book");
+            const books = response.data;
+            const results = books.filter(book =>
+                book.title.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setSearchResults(results);
+        } catch (error) {
+            console.error("Error fetching books:", error);
+        }
+    };
 
-        const [sticky, setSticky] = useState(false)
-        useEffect(() => {
-            const handleScroll = () => {
-                if (window.scrollY > 0) {
-                    setSticky(true)
-                } else {
-                    setSticky(false)
-                }
+
+    const navItems = (
+        <>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/course">Course</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </>
+    )
+
+    const [sticky, setSticky] = useState(false)
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setSticky(true)
+            } else {
+                setSticky(false)
             }
+        }
 
-            window.addEventListener('scroll', handleScroll);
-            return () => {
-                window.removeEventListener('scroll', handleScroll)
-            }
-        })
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    })
 
 
-        return (
-            <>
-                <div className={`container z-50 mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
+    return (
+        <>
+            <div className={`container z-50 mx-auto md:px-10 px-4 fixed top-0 left-0 right-0 
                     ${sticky
-                        ? "sticky-navbar shadow-md bg-gray-700 duration-all transition-all ease-in-out"
-                        : ""}`}>
-                    <div className="navbar flex justify-between px-10">
-                        <div className="navbar-start">
-                            <div className="dropdown">
-                                <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                                </div>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
-                                    {navItems}
-                                </ul>
+                    ? "sticky-navbar shadow-md bg-gray-700 duration-all transition-all ease-in-out"
+                    : ""}`}>
+                <div className="navbar flex justify-between px-10">
+                    <div className="navbar-start">
+                        <div className="dropdown">
+                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </div>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
+                                {navItems}
+                            </ul>
 
-                            </div>
-                            <a className="btn btn-ghost text-xl">Vikash</a>
                         </div>
-                        <div className="flex justify-center gap-4">
-                            <div className="navbar-center hidden lg:flex">
-                                <ul className="menu menu-horizontal px-1">
-                                    {navItems}
-                                </ul>
-                            </div>
-                            <div>
-                                <label className="px-3 py-3 border hidden md:flex border-gray-700 rounded-md items-center gap-2">
-                                    <input type="text" className="grow outline-none bg-transparent" placeholder="Search" />
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-                                </label>
-                            </div>
-                            {/* <div>
+                        <a className="btn btn-ghost text-xl">Vikash</a>
+                    </div>
+                    <div className="flex justify-center gap-4">
+                        <div className="navbar-center hidden lg:flex">
+                            <ul className="menu menu-horizontal px-1">
+                                {navItems}
+                            </ul>
+                        </div>
+                        <div>
+                            <label className="px-3 py-3 border hidden md:flex border-gray-700 rounded-md items-center gap-2">
+                                <input type="text" className="grow outline-none bg-transparent" placeholder="Search" value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)} />
+                                <svg onClick={handleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                            </label>
+                        </div>
+                        {/* <div>
                                 <label className="swap swap-rotate">
 
                                     <input type="checkbox" className="theme-controller" value="synthwave" />
@@ -77,20 +96,32 @@ import Logout from "./Logout";
 
                                 </label>
                             </div> */}
-                            {
-                                authUser? <Logout /> :
-                            <div>
-                                <a 
-                                className="px-4 py-2 cursor-pointer bg-black rounded-lg text-xl hover:bg-gray-700" 
-                                onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
-                                <Login />
-                            </div>
-                            }
-                        </div>
+                        {
+                            authUser ? <Logout /> :
+                                <div>
+                                    <a
+                                        className="px-4 py-2 cursor-pointer bg-black rounded-lg text-xl hover:bg-gray-700"
+                                        onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
+                                    <Login />
+                                </div>
+                        }
                     </div>
+                    {searchResults.length > 0 && (
+                        <div className="search-results container mx-auto mt-20 p-4 bg-white shadow-md rounded-md">
+                            <h2 className="text-2xl font-bold mb-4">Search Results:</h2>
+                            <ul>
+                                {searchResults.map((book, index) => (
+                                    <li key={index} className="border-b py-2">
+                                        <strong>{book.title}</strong> by {book.author}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
-            </>
-        );
-    };
+            </div>
+        </>
+    );
+};
 
-    export default Navbar;
+export default Navbar;
