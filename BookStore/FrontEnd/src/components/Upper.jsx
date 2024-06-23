@@ -1,6 +1,8 @@
 // import React from 'react';
 import Navbar from './Navbar';
 import MainCourse from './Course/MainCourse';
+import { useState } from 'react';
+import Course from './Course/Course';
 
 const Upper = () => {
 
@@ -8,7 +10,7 @@ const Upper = () => {
   return (
     <>
     <Navbar setSearchResults={setSearchResults} />
-    <MainCourse searchResults={searchResults} />
+    <Course searchResults={searchResults} />
     </>
   );
 };

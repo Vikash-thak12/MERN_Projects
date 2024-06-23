@@ -4,11 +4,11 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import MainCourse from "./MainCourse";
 
-const Course = () => {
+const Course = ({ searchResults}) => {
   return (
     <>
     <Navbar />
-    <MainCourse />
+    <MainCourse searchResults={searchResults} />
     <Footer />
     </>
   );

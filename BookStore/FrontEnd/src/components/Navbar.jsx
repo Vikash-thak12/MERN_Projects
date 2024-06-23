@@ -10,7 +10,7 @@ const Navbar = ({ setSearchResults }) => {
     // console.log(authUser)
 
     const [searchQuery, setSearchQuery] = useState("");
-    // const [searchResults, setSearchResults] = useState([]);
+    // const [searchResults, setSearchResults] = useState([]);A
 
 
     const handleSearch = async () => {
@@ -106,7 +106,7 @@ const Navbar = ({ setSearchResults }) => {
                                 </div>
                         }
                     </div>
-                    {searchResults.length > 0 && (
+                    {/* {searchResults.length > 0 && (
                         <div className="search-results container mx-auto mt-20 p-4 bg-white shadow-md rounded-md">
                             <h2 className="text-2xl font-bold mb-4">Search Results:</h2>
                             <ul>
@@ -117,7 +117,7 @@ const Navbar = ({ setSearchResults }) => {
                                 ))}
                             </ul>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
         </>

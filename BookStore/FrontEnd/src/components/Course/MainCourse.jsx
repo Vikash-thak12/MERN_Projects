@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
-const MainCourse = () => {
+const MainCourse = ({ searchResults }) => {
 
     const [book, setBook] = useState([])
 
@@ -20,6 +20,7 @@ const MainCourse = () => {
         }
         getBook();
     }, [])
+    const displayBooks = searchResults.length > 0 ? searchResults : books;
     return (
         <div className='min-h-screen overflow-hidden max-w-screen-xl container mx-auto md:px-10 px-4'>
             <div className='mt-20'>
@@ -30,8 +31,13 @@ const MainCourse = () => {
                 </Link>
             </div>
             <div className='card grid md:grid-cols-3 grid-cols-1'>
-                {
+                {/* {
                     book.map((item) => (
+                        <Cards item={item} key={item.id} />
+                    ))
+                } */}
+                {
+                    displayBooks.map((item) => (
                         <Cards item={item} key={item.id} />
                     ))
                 }
