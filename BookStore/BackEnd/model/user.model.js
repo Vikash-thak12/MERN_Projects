@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// creating model for user 
 const userSchema = mongoose.Schema({
     fullname: {
         type: String, 

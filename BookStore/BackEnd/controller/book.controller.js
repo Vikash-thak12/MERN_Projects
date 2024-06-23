@@ -1,5 +1,6 @@
 import Book from "../model/book.model.js";
 
+// for getting the list of books from database 
 export const getBook = async (req, res) => {
     try {
         const book = await Book.find({})
