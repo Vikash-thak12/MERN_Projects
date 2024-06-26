@@ -15,6 +15,9 @@ const Login = () => {
   const getInputData = (e) => {
     e.preventDefault();
     console.log(fullname, email, password);
+    setFullname("")
+    setEmail("")
+    setPassword("")
   }
   return (
     <div className='h-screen bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${bg})` }}>
