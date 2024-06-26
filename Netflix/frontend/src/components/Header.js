@@ -10,7 +10,7 @@ const Header = () => {
         <img className='w-28 cursor-pointer' src={netflix} alt="" />
       </div>
       <div className='flex justify-between items-center px-4 gap-4'>
-        <div className='flex items-center gap-1'>
+        <div className='flex items-center gap-1 text-white'>
           <IoIosArrowDropdown size={24 } />
           <h1 className='font-medium'>Vikash Thakur</h1>
         </div>
