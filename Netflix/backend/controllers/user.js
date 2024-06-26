@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import bcryptjs from 'bcryptjs'
 
-export const Register = async (req, res) => {
+export const Signup = async (req, res) => {
     try {
         const {fullname, email, password} = req.body;
         if(!fullname || !email || !password) {
@@ -33,5 +33,33 @@ export const Register = async (req, res) => {
         })
     } catch (error) {
         console.log("Error", error);
+    }
+}
+
+
+export const login = async (req, res) => {
+    try {
+        const {email, password} = req.body;
+        const user = await userModel.findOne({email})
+        const isMatch = await bcryptjs.compare(password, user.password)
+        if(!user || !isMatch) {
+            return res.status(400).json({
+                Message: "Invalid username and password",
+                success: false
+            })
+        } else {
+            return res.status(200).json({
+                message: "Login successfully",
+                User: {
+                    _id: user._id,
+                    Name: user.fullname,
+                    Email: user.email
+                }
+            })
+        }
+
+    } catch (error) {
+        console.log("Error", error)
+        res.status(500).json({ Message: "Internal Server Error"})
     }
 }
