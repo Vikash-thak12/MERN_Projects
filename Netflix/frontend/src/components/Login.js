@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Header from './Header'
 import bg from '../assets/bg.jpg'
+import { API_END_POINT } from '../utils/contant.js'
+import axios from 'axios'
 
 const Login = () => {
 
@@ -12,9 +14,29 @@ const Login = () => {
     setIslogin(!islogin)
   }
 
-  const getInputData = (e) => {
+  const getInputData = async (e) => {
     e.preventDefault();
-    console.log(fullname, email, password);
+    // console.log(fullname, email, password);
+    if(islogin) {
+      //Login
+      const user = {email, password};
+      try {
+        const res = await axios.get(`${API_END_POINT}`, user);
+        console.log(res);
+      } catch (error) {
+        console.log("Error", error);
+      }
+
+    } else {
+      // Signup
+      const user = {fullname, email, password};
+      try {
+        const res = await axios.post(`${API_END_POINT}`, user);
+        console.log(res);
+      } catch (error) {
+        console.log("Error", error);
+      }
+    }
     setFullname("")
     setEmail("")
     setPassword("")
