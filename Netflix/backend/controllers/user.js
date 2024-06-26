@@ -1,4 +1,5 @@
 import userModel from "../models/userModel.js";
+import bcryptjs from 'bcryptjs'
 
 export const Register = async (req, res) => {
     try {
@@ -13,17 +14,18 @@ export const Register = async (req, res) => {
         const user = await userModel.findOne({ email })
         if(user) {
             return res.status(401).json({
-                message: "This email is already used",
+                message: "The user is already exist",
                 success: false
             })
         }
 
+        const hashPassword = await bcryptjs.hash(password, 16)
 
         // here this usermodel is from controllers where this data are created in the database 
         await userModel.create({
-            fullname,
-            email, 
-            password
+            fullname: fullname,
+            email: email, 
+            password: hashPassword
         })
 
         res.status(200).json({
