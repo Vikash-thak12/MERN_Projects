@@ -1,4 +1,4 @@
-import user from "../models/userModel.js";
+import userModel from "../models/userModel.js";
 
 export const Register = async (req, res) => {
     try {
@@ -10,7 +10,7 @@ export const Register = async (req, res) => {
             })
         }
 
-        const user = await user.findOne({ email })
+        const user = await userModel.findOne({ email })
         if(user) {
             return res.status(401).json({
                 message: "This email is already used",
@@ -18,7 +18,9 @@ export const Register = async (req, res) => {
             })
         }
 
-        await user.create({
+
+        // here this usermodel is from controllers where this data are created in the database 
+        await userModel.create({
             fullname,
             email, 
             password
