@@ -1,6 +1,6 @@
-import user from "../models/userModel";
+import user from "../models/userModel.js";
 
-const Register = async (req, res) => {
+export const Register = async (req, res) => {
     try {
         const {fullname, email, password} = req.body;
         if(!fullname || !email || !password) {
