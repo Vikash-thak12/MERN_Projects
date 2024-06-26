@@ -1,5 +1,6 @@
 import userModel from "../models/userModel.js";
 import bcryptjs from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 export const Signup = async (req, res) => {
     try {
@@ -57,15 +58,26 @@ export const login = async (req, res) => {
             });
         }
 
+        const secret = "Vikash@123##"
+        const payload = {
+            ...user
+        }
 
-        res.status(200).json({
-            message: "Login successfully",
-            user: {
-                _id: user._id,
-                name: user.fullname,
-                email: user.email
-            }
-        });
+        const token = await jwt.sign(payload, secret, {expiresIn:"10hr"})
+        return res.status(200).cookie("token", token).json({
+            Message: `Welcome Back ${user.fullname}`,
+            success: true
+        })
+
+
+        // res.status(200).json({
+        //     message: "Login successfully",
+        //     user: {
+        //         _id: user._id,
+        //         name: user.fullname,
+        //         email: user.email
+        //     }
+        // });
     } catch (error) {
         console.log("Error", error);
         res.status(500).json({
