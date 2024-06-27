@@ -2,6 +2,7 @@ import express, { urlencoded } from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose";
 import userRoute from "./routes/userRoute.js"
+import cors from 'cors'
 // import cookieParser from "cookie-parser";
 
 const app = express()
@@ -15,7 +16,9 @@ const Url = process.env.Mongo_Url;
 // middlrewares 
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
+app.use(cors())
 // app.use(cookieParser)
+
 
 //Api
 app.use("/api/user", userRoute)
@@ -35,5 +38,5 @@ try {
     console.log("Error", error);
 }
 
-
+// Server 
 app.listen(PORT, () => console.log(`Server stated on PORT: ${PORT}`))

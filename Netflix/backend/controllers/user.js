@@ -12,6 +12,7 @@ export const Signup = async (req, res) => {
             })
         }
 
+        // finding the user from the database
         const user = await userModel.findOne({ email })
         if (user) {
             return res.status(401).json({
@@ -20,6 +21,7 @@ export const Signup = async (req, res) => {
             })
         }
 
+        // hashing the password
         const hashPassword = await bcryptjs.hash(password, 8)
 
         // here this usermodel is from controllers where this data are created in the database 
@@ -30,7 +32,8 @@ export const Signup = async (req, res) => {
         })
 
         res.status(200).json({
-            message: "User created successfully"
+            message: "User created successfully",
+            success: true
         })
     } catch (error) {
         console.log("Error", error);
@@ -50,6 +53,7 @@ export const login = async (req, res) => {
             });
         }
 
+        
         const isMatch = await bcryptjs.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({
@@ -65,7 +69,7 @@ export const login = async (req, res) => {
 
         const token = await jwt.sign(payload, secret, {expiresIn:"10hr"})
         return res.status(200).cookie("token", token).json({
-            Message: `Welcome Back ${user.fullname}`,
+            message: `Welcome Back ${user.fullname}`,
             success: true
         })
 

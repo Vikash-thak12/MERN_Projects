@@ -3,6 +3,7 @@ import Header from './Header'
 import bg from '../assets/bg.jpg'
 import { API_END_POINT } from '../utils/contant.js'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Login = () => {
 
@@ -21,9 +22,12 @@ const Login = () => {
       //Login
       const user = {email, password};
       try {
-        const res = await axios.get(`${API_END_POINT}`, user);
-        console.log(res);
+        const res = await axios.post(`${API_END_POINT}/login`, user);
+        if(res.data.success) {
+          toast.success(res.data.message);
+        }
       } catch (error) {
+        toast.error(error.response.data.message)
         console.log("Error", error);
       }
 
@@ -31,9 +35,13 @@ const Login = () => {
       // Signup
       const user = {fullname, email, password};
       try {
-        const res = await axios.post(`${API_END_POINT}`, user);
-        console.log(res);
+        const res = await axios.post(`${API_END_POINT}/signup`, user);
+        if(res.data.success) {
+          toast.success(res.data.message);
+        }
+        // console.log(res);
       } catch (error) {
+        toast.error(error.response.data.message)
         console.log("Error", error);
       }
     }
