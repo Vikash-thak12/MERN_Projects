@@ -12,12 +12,18 @@ dotenv.config();
 const PORT = process.env.PORT || 8001
 const Url = process.env.Mongo_Url;
 
+// const corsOptions = {
+//     origin: 'http://localhost:8000',
+//     credentials: true,
+// }
+
 
 // middlrewares 
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
-app.use(cors())
+// app.use(cors(corsOptions))
 // app.use(cookieParser)
+app.use(cors())
 
 
 //Api
