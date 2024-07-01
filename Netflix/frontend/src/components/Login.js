@@ -4,6 +4,7 @@ import bg from '../assets/bg.jpg'
 import { API_END_POINT } from '../utils/contant.js'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
@@ -11,6 +12,7 @@ const Login = () => {
   const [fullname, setFullname] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate();
   const loginHandler = () => {
     setIslogin(!islogin)
   }
@@ -36,7 +38,7 @@ const Login = () => {
         toast.error(error.response.data.message)
         console.log("Error", error);
       }
-
+      navigate("/browse")
     } else {
       // Signup
       const user = {fullname, email, password};
@@ -46,6 +48,7 @@ const Login = () => {
         if(res.data.success) {
           toast.success(res.data.message);
         }
+        setIslogin(true)
         // console.log(res);
       } catch (error) {
         toast.error(error.response.data.message)
