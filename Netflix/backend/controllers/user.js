@@ -70,6 +70,7 @@ export const login = async (req, res) => {
         const token = await jwt.sign(payload, secret, {expiresIn:"24hr"})
         return res.status(200).cookie("token", token).json({
             message: `Welcome Back ${user.fullname}`,
+            user,  // this user i'm getting in the redux devtools
             success: true
         })
 
