@@ -47,7 +47,7 @@ const Login = () => {
     }
     setFullname("")
     setEmail("")
-    setPassword("")
+    setPassword("") 
   }
   return (
     <div className='h-screen bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${bg})` }}>
