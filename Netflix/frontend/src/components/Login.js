@@ -22,7 +22,13 @@ const Login = () => {
       //Login
       const user = {email, password};
       try {
-        const res = await axios.post(`${API_END_POINT}/login`, user);
+        const res = await axios.post(`${API_END_POINT}/login`, user, {
+          headers: {
+            "Content-Type": "application/json"
+          },
+          withCredentials: true
+        });
+        // console.log(res);
         if(res.data.success) {
           toast.success(res.data.message);
         }
@@ -36,6 +42,7 @@ const Login = () => {
       const user = {fullname, email, password};
       try {
         const res = await axios.post(`${API_END_POINT}/signup`, user);
+        console.log(res);
         if(res.data.success) {
           toast.success(res.data.message);
         }
@@ -45,7 +52,7 @@ const Login = () => {
         console.log("Error", error);
       }
     }
-    setFullname("")
+    setFullname("") 
     setEmail("")
     setPassword("") 
   }
