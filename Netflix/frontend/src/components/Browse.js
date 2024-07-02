@@ -4,7 +4,6 @@ import MovieContainer from './MovieContainer.js'
 import MainContainer from './MainContainer.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { setUser } from '../redux/userSlice.js'
 import axios from 'axios'
 import { Now_Playing_API, options } from '../utils/contant.js'
 
