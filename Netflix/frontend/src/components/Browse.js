@@ -6,7 +6,7 @@ import MainContainer from './MainContainer.js'
 const Browse = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div>
         <MainContainer />
         <MovieContainer />

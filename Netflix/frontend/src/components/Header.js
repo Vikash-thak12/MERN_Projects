@@ -37,7 +37,7 @@ const Header = () => {
 
 
   return (
-    <div className='flex justify-between px-5 py-3  bg-gradient-to-b from-black'>
+    <div className='flex absolute z-20 w-full justify-between px-5 py-3  bg-gradient-to-b from-black'>
       <div>
         <img className='w-28 cursor-pointer' src={netflix} alt="" />
       </div>
