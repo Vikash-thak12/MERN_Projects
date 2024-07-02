@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { IoIosArrowDropdown } from "react-icons/io";
 import netflix from '../assets/netflix.svg'
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,11 +13,6 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // console.log(user);
-  useEffect(() => {
-    if(!user){
-      navigate("/")
-    }
-  },[])
 
 
   const logoutHandler = async () => {
