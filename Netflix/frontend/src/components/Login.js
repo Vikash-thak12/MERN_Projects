@@ -5,8 +5,8 @@ import { API_END_POINT } from '../utils/contant.js'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { setUser } from '../redux/userSlice.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLoading, setUser } from '../redux/userSlice.js'
 
 const Login = () => {
 
@@ -17,6 +17,8 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const isLoading = useSelector(store => store.app.isLoading)
+
 
   const loginHandler = () => {
     setIslogin(!islogin)
@@ -24,7 +26,7 @@ const Login = () => {
 
   const getInputData = async (e) => {
     e.preventDefault();
-    // console.log(fullname, email, password);
+    dispatch(setLoading(true))
     if(islogin) {
       //Login
       const user = {email, password};
@@ -45,9 +47,12 @@ const Login = () => {
       } catch (error) {
         toast.error(error.response.data.message)
         console.log("Error", error);
+      } finally {
+        dispatch(setLoading(false))
       }
     } else {
       // Signup
+      dispatch(setLoading(true))
       const user = {fullname, email, password};
       try {
         const res = await axios.post(`${API_END_POINT}/signup`, user, {
@@ -65,6 +70,8 @@ const Login = () => {
       } catch (error) {
         toast.error(error.response.data.message)
         console.log("Error", error);
+      } finally {
+        dispatch(setLoading(false))
       }
     }
     setFullname("") 
@@ -99,11 +106,12 @@ const Login = () => {
 
           </div>
           <div className='text-center px-4 mt-2'>
-            <button className='bg-white text-black px-24 rounded-lg py-1 w-full'>{islogin ? "Login" : "Signup"}</button>
+            <button className='bg-white text-black px-24 rounded-lg py-1 w-full'>{`${isLoading ? "Loading.." : (islogin ? "Login" : "Signup")}`}</button>
           </div>
           <div className='flex justify-center my-3 gap-1 text-center mx-auto'>
             <p className='text-white'>{islogin ? "Didn't have an Account?" : "Already Have an account?"}</p>
             <span onClick={loginHandler} className='text-blue-600 cursor-pointer'>{islogin ? "Register" : "Login"}</span>
+            {/* <span onClick={loginHandler} className='text-blue-600 cursor-pointer'>{}</span> */}
           </div>
         </form>
       </div >
