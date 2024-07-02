@@ -39,7 +39,7 @@ const Login = () => {
         if(res.data.success) {
           toast.success(res.data.message);
         }
-        console.log(res.data.user);
+        // console.log(res.data.user);
         dispatch(setUser(res.data.user))
         navigate("/browse")
       } catch (error) {
@@ -50,7 +50,12 @@ const Login = () => {
       // Signup
       const user = {fullname, email, password};
       try {
-        const res = await axios.post(`${API_END_POINT}/signup`, user);
+        const res = await axios.post(`${API_END_POINT}/signup`, user, {
+          headers: {
+            "Content-Type": "application/json"
+          },
+          withCredentials: true
+        });
         console.log(res);
         if(res.data.success) {
           toast.success(res.data.message);
