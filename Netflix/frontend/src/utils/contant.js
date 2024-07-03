@@ -8,3 +8,4 @@ export const options = {
   };
 
 export const Now_Playing_API = "https://api.themoviedb.org/3/movie/now_playing"
+export const Popular_API = "https://api.themoviedb.org/3/movie/popular"
