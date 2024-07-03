@@ -1,9 +1,10 @@
 import React from 'react'
+import Movielist from './Movielist'
 
 const MovieContainer = () => {
   return (
-    <div>
-      movie Container
+    <div className='bg-black'>
+      <Movielist />
     </div>
   )
 }

@@ -8,6 +8,10 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies.js'
 import usePopularMovies from '../hooks/usePopularMovies.js'
 import useTopRatedMovies from '../hooks/useTopRatedMovies.js'
 import useUpcomingMovies from '../hooks/useUpcomingMovies.js'
+import Register from './Register.js'
+// import Movielist from './Movielist.js'
+// import VideoTitle from './VideoTitle.js'
+// import Register from './Register.js'
 
 const Browse = () => {
   const user = useSelector((store) => store.app.user)
@@ -22,20 +26,21 @@ const Browse = () => {
   useUpcomingMovies();
 
   useEffect(() => {
-    if(!user){
+    if (!user) {
       navigate("/")
     }
-  },[])
+  }, [])
 
 
   return (
     <>
-      <Header />
       <div>
+        <Header />
         <MainContainer />
         <MovieContainer />
+        {/* <Header /> */}
+        {/* <Register />   */}
       </div>
-
     </>
   )
 }
