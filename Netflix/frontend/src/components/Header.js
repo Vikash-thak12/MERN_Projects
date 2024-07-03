@@ -7,9 +7,11 @@ import axios from 'axios';
 import { API_END_POINT } from '../utils/contant';
 import { setUser } from '../redux/userSlice';
 import toast from 'react-hot-toast';
+import { setToggle } from '../redux/movieSlice';
 
 const Header = () => {
   const user = useSelector((store) => store.app.user)
+  const toggle = useSelector((store) => store.movie.toggle)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // console.log(user);
@@ -29,6 +31,10 @@ const Header = () => {
     }
   }
 
+  const toggleHandler = () => {
+    dispatch(setToggle())
+  }
+
 
 
   return (
@@ -45,7 +51,7 @@ const Header = () => {
                 <h1 className='font-medium'>{user.fullname}</h1>
               </div>
               <button onClick={logoutHandler} className='bg-red-600 p-1 rounded-lg px-3 text-white'>Logout</button>
-              <button className='bg-red-600 p-1 rounded-lg px-3 text-white'>Search Movie</button>
+              <button onClick={toggleHandler} className='bg-red-600 p-1 rounded-lg px-3 text-white'>{toggle ? "Home" : "Search Movie"}</button>
             </>
           )
         }

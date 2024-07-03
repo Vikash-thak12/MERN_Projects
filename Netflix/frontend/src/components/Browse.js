@@ -8,13 +8,11 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies.js'
 import usePopularMovies from '../hooks/usePopularMovies.js'
 import useTopRatedMovies from '../hooks/useTopRatedMovies.js'
 import useUpcomingMovies from '../hooks/useUpcomingMovies.js'
-import Register from './Register.js'
-// import Movielist from './Movielist.js'
-// import VideoTitle from './VideoTitle.js'
-// import Register from './Register.js'
+import SearchMovies from './SearchMovies.js'
 
 const Browse = () => {
   const user = useSelector((store) => store.app.user)
+  const toggle = useSelector((store) => store.movie.toggle)
   const navigate = useNavigate();
 
 
@@ -36,10 +34,16 @@ const Browse = () => {
     <>
       <div>
         <Header />
-        <MainContainer />
-        <MovieContainer />
-        {/* <Header /> */}
-        {/* <Register />   */}
+        <div>
+          {
+            toggle ? <SearchMovies /> : (
+              <>
+                <MainContainer />
+                <MovieContainer />
+              </>
+            )
+          }
+        </div>
       </div>
     </>
   )
