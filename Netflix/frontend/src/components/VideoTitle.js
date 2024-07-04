@@ -4,7 +4,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 
 const VideoTitle = ({title, overview}) => {
     return (
-        <div className='absolute mt-60 mx-4 px-4 py-2 text-white rounded-md'>
+        <div className='absolute mt-80 mx-4 px-4 py-2 text-white rounded-md'>
             <h1 className='text-3xl font-medium'>{title}</h1>
             <p className='w-1/2 mt-4'>{overview}</p>
             <div className='flex gap-3 mt-4'>
