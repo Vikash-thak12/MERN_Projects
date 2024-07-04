@@ -33,7 +33,7 @@ const SearchMovies = () => {
   const {movieName, searchedMovies} = useSelector(store => store.search)
 
   return (
-    <div className='bg-gray-500 h-screen'>
+    <div className='h-screen'>
       <div className='flex justify-center pt-[10%] w-[100%]'>
         <form onSubmit={submitHandler} action="submit" className='border-2 rounded-lg p-2 w-[50%] flex justify-between gap-2'>
           <input value={searchMovie} onChange={(e) => { setSearchMovie(e.target.value) }} className='bg-transparent outline-none w-full' type="text" name="search" placeholder="Search Movies" />
@@ -43,7 +43,7 @@ const SearchMovies = () => {
       </div>
       <div className='bg-transparent'>
         {/* <h1 className='bg-red-500'>{searchMovie}</h1> */}
-        <Movielist title={movieName} movie={searchedMovies} />
+        <Movielist title={movieName} searchMovie={true} movie={searchedMovies} />
       </div>
     </div>
   )
