@@ -13,7 +13,7 @@ const Movielist = ({ title, movie, searchMovie=false }) => {
                     {
                         movie && movie.map((item) => {
                             return (
-                                <MovieCard key={item.id} item={item} posterpath={item.poster_path} />
+                                <MovieCard key={item.id} itemId={item.id} posterpath={item.poster_path} />
                             )
                         })
                     }
