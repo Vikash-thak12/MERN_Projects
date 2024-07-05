@@ -42,8 +42,9 @@ const SearchMovies = () => {
         </form>
       </div>
       <div className='bg-transparent'>
-        {/* <h1 className='bg-red-500'>{searchMovie}</h1> */}
-        <Movielist title={movieName} searchMovie={true} movie={searchedMovies} />
+        {
+          searchedMovies.length > 0 ? <Movielist title={movieName} searchMovie={true} movie={searchedMovies} /> : <h1 className='px-4 text-3xl mt-32 flex justify-center'>Oops... Movie not found!!</h1>
+        }
       </div>
     </div>
   )
