@@ -1,10 +1,14 @@
-import { lazy } from "react";
+// import { lazy } from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom"
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Chat from "./pages/Chat";
 const App = () => {
-  const Home = lazy(() => import("./pages/Home"))
-  const Chat = lazy(() => import("./pages/Chat"))
-  const Login = lazy(() => import("./pages/Login"))
+  // const Home = lazy(() => import("./pages/Home"))
+  // const Chat = lazy(() => import("./pages/Chat"))
+  // const Login = lazy(() => import("./pages/Login"))
   
+
   return (
     <BrowserRouter>
     <Routes>
