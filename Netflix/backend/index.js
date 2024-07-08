@@ -12,6 +12,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8001
 const Url = process.env.Mongo_Url;
 
+// cors to handle the communication between the client and server
 const corsOptions = {
     origin: 'http://localhost:3000',
     credentials: true,
