@@ -4,18 +4,18 @@ export const signup = async (req, res) => {
     try {
         const {fullname, gmail, password, confirmpassword, gender, profilepic} = req.body;
         if(password !== confirmpassword) {
-            res.status(400).json({ Error: "The passwords didn't match"})
+            return res.status(400).json({ Error: "The passwords didn't match"})
         }
 
         if(!fullname || !gmail || !password || !gender || !profilepic) {
-            res.status(401).json({
+            return res.status(401).json({
                 Error: "Please fill all the fields"
             })
         }
 
         const user = await userModel.findOne({gmail})
         if(user) {
-            res.status(401).json({ Error: "User already exists" })
+            return res.status(401).json({ Message: "User already exists" })
         }
 
         const boyprofile = `https://avatar.iran.liara.run/public/boy?username={gmail}`;
@@ -23,7 +23,7 @@ export const signup = async (req, res) => {
 
 
         const hashpassword = await bcryptjs.hash(password, 8) 
-        await userModel.create({
+        const newUser = await userModel.create({
             fullname,
             gmail,
             password: hashpassword,
@@ -31,18 +31,20 @@ export const signup = async (req, res) => {
             profilepic: gender === "male" ? boyprofile : girlprofile
         })
 
-        res.status(200).json({
-            message: "User created successfully"
-        }, {
-            _id: user._id,
-            fullname,
-            gmail,
-            gender
-        })
+        return res.status(200).json({
+            message: "User created successfully",
+            userDetails: {
+                _id: newUser._id,
+                fullname: newUser.fullname,
+                gmail: newUser.gmail,
+                gender: newUser.gender,
+            }
+        },
+    )
 
     } catch (error) {
         console.log("Error in signup Controller", error.message);
-        res.status(500).json({
+        return res.status(500).json({
             Error: "Internal Server Error"
         })
     }

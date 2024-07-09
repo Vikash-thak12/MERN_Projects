@@ -17,7 +17,10 @@ app.get("/", (req, res) => {
     res.send("Hello, This is from server side")
 })
 
+
+app.use(express.json())
 app.use("/auth/api", authRoutes)
+
 
 //connecting to mongoDB
 try {
