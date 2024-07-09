@@ -1,21 +1,25 @@
 // import { lazy } from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
-const App = () => {
-  // const Home = lazy(() => import("./pages/Home"))
-  // const Chat = lazy(() => import("./pages/Chat"))
-  // const Login = lazy(() => import("./pages/Login"))
-  
+import Group from "./pages/Group";
+import ProtectRoute from "./components/auth/ProtectRoute";
+
+const App = () => { 
+
+  const user = true;
 
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/chat" element={<Chat />} />
-    </Routes>
+      <Routes>
+        <Route element={<ProtectRoute user={user} />} >
+          <Route path="/" element={<Home />} />
+          <Route path="/chat/:chatId" element={<Chat />} />
+          <Route path="/group" element={<Group />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </BrowserRouter>
   );
 };
