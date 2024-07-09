@@ -1,5 +1,3 @@
-// import React from 'react';
-// import bg from "../assets/loginbg.jpg"
 import { useState } from "react";
 import bg from "../assets/loginbg1.jpg"
 import { Avatar, IconButton, Stack, Typography } from "@mui/material";
@@ -10,9 +8,6 @@ import { useFileHandler, useInputValidation } from '6pp'
 
 const Login = () => {
   const [islogin, setIslogin] = useState(false)
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
   const name = useInputValidation("")
   const email = useInputValidation("")
   const password = useInputValidation("")
@@ -25,23 +20,6 @@ const Login = () => {
   const prevent = (e) => {
     e.preventDefault()
   }
-
-  
-  
-  // const getInputData = (e) => {
-  //   e.preventDefault();
-  //   //login
-  //   if(islogin) {
-  //     const user = {email, password}
-  //     console.log(user);
-  //   } else {
-  //     const user = {name, email, password}
-  //     console.log(user);
-  //   }
-  //   setName("")
-  //   setEmail("")   
-  //   setPassword("")
-  // }
 
 
   return (
@@ -86,23 +64,6 @@ const Login = () => {
             )
           }
           
-          {/* <TextField
-          required
-          fullWidth
-          label= "Password"
-          type = "password"
-          margin="normal"
-          variant="outlined"
-          value={password.value}
-          onChange={password.changeHandler}
-           />
-          {
-            password.error && (
-              <Typography color="error" variant="caption">
-                {password.error}
-              </Typography>
-            )
-          } */}
           <div className="flex justify-center bg-red-500 mx-auto rounded-lg">
             <button className="text-white text-2xl px-3 py-1 rounded-lg">{islogin ? "Login" : "SignUp"}</button>
           </div>
