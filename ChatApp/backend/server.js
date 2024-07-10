@@ -4,8 +4,9 @@ import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 
 
-import authRoutes from "./auth/auth.routes.js"
-import messageRoutes from "./auth/message.routes.js"
+import authRoutes from "./routes/auth.routes.js"
+import messageRoutes from "./routes/message.routes.js"
+import userRoutes from "./routes/user.routes.js"
 
 dotenv.config();
 
@@ -19,13 +20,10 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-app.use("/auth/api", authRoutes)
-app.use("/auth/messages/", messageRoutes)
+app.use("/api/auth", authRoutes)
+app.use("/api/messages", messageRoutes)
+app.use("/api/users", userRoutes)
 
-app.get('/check-cookie', (req, res) => {
-    console.log(req.cookies);
-    res.send(req.cookies);
-});
 
 
 
