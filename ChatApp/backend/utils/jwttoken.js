@@ -1,13 +1,12 @@
 import jwt from "jsonwebtoken"
-const secretKey = "vikash@123##"
-const generateTokenAndCookie = (userId, res) => {
-    const token = jwt.sign({userId}, secretKey, {
-        expiresIn: "15d"
+const generateTokenAndCookie = (userId, fullname, gmail, res) => {
+    const token = jwt.sign({ userId, fullname, gmail }, process.env.JWT_SECRET_KEY, {
+        expiresIn: "1hr",
     })
 
 
-    res.cookie("JWT", token, {
-        maxAge: 15 * 24 * 60 * 60 * 1000,
+    res.cookie("jwt", token, {
+        maxAge: 1 * 60 * 60 * 1000,
         httpOnly: true,
         sameSite: "strict"
     })

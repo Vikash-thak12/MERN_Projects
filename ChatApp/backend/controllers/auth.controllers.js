@@ -33,7 +33,7 @@ export const signup = async (req, res) => {
         })
 
         if (newUser) {
-            // generateTokenAndCookie(newUser._id, res)
+            generateTokenAndCookie(newUser._id, newUser.fullname, newUser.gmail, res)
             return res.status(200).json({
                 message: "User created successfully",
                 userDetails: {
@@ -67,7 +67,7 @@ export const login = async (req, res) => {
                 Error: "Invalid Username and Password"
             })
         }
-        generateTokenAndCookie(user._id, res)
+        generateTokenAndCookie(user._id, user.fullname, user.gmail, res)
         return res.status(200).json({
             message: `Welcome Back ${user.gender === "male" ? "Mr." : "Mrs."} ${user.fullname}`,
             userDetails: {
