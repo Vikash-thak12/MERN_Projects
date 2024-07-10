@@ -22,7 +22,11 @@ export const sendMessage = async (req, res) => {
             message
         })
 
-        conversation.messages.push(newMessage._id)
+        if(newMessage) {
+            conversation.messages.push(newMessage._id)
+        }
+
+        // Socket IO functionlaity will be here
 
         // This will run in parallel
         await Promise.all([conversation.save(), newMessage.save()])
