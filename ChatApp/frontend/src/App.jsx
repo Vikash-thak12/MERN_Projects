@@ -1,12 +1,12 @@
+// import Home from "./pages/Home/Home";
+import Login from "./pages/Login";
+
 const App = () => {
   return (
-    <div>
-      <button className="btn btn-outline">Default</button>
-      <button className="btn btn-outline btn-primary">Primary</button>
-      <button className="btn btn-outline btn-secondary">Secondary</button>
-      <button className="btn btn-outline btn-accent">Accent</button>
+    <div className="p-4 h-screen flex items-center justify-center">
+      <Login />
     </div>
   );
 };
 
-export default App;
+export default App; 
