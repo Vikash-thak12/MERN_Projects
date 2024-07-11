@@ -1,7 +1,12 @@
+import Conversation from "./Conversation";
+
 const Conversations = () => {
   return (
     <div>
-    Conversations
+        <Conversation />
+        <Conversation />
+        <Conversation />
+        <Conversation />
     </div>
   );
 };
