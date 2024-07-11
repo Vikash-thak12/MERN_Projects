@@ -1,9 +1,10 @@
+import Header from "./Header";
 
 
 const MessageContainer = () => {
   return (
-    <div>
-    MessageContainer
+    <div className="md:min-w-[450px] flex flex-col">
+      <Header />
     </div>
   );
 };
