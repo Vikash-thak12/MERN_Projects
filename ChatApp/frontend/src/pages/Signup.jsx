@@ -2,16 +2,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CheckButton from './CheckButton';
+import useSignup from '../hooks/useSignup';
 
 const Signup = () => {
 
     const [inputs, setInputs] = useState({
         fullname: '',
-        gamil: '',
+        gmail: '',
         password: '',
         confirmpassword: '',
-        gender: ''
+        gender: ''  
     })
+
+    const {loading, signup} = useSignup()
 
     const handleOnCheckboxChange = (gender) => {
         setInputs({...inputs, gender})
@@ -19,7 +22,8 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await Signup(inputs)
+        console.log(inputs);
+        await signup(inputs)
     }
 
 
@@ -39,8 +43,8 @@ const Signup = () => {
                         <label>Gmail</label>
                         <input
                             value={inputs.gamil}
-                            onChange={(e) => setInputs({ ...inputs, gamil: e.target.value })}
-                            className="px-3 py-2 outline-none rounded-md" type="gmail" name="gmail" placeholder="Enter your gmail" />
+                            onChange={(e) => setInputs({ ...inputs, gmail: e.target.value })}
+                            className="px-3 py-2 outline-none rounded-md" type="email" name="gmail" placeholder="Enter your gmail" />
                     </div>
                     <div className="flex flex-col gap-2">
                         <label>Password</label>
