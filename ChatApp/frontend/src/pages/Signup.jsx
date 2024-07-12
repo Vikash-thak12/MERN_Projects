@@ -11,13 +11,13 @@ const Signup = () => {
         gmail: '',
         password: '',
         confirmpassword: '',
-        gender: ''  
+        gender: ''
     })
 
-    const {signup} = useSignup()
+    const { loading, signup } = useSignup()
 
     const handleOnCheckboxChange = (gender) => {
-        setInputs({...inputs, gender})
+        setInputs({ ...inputs, gender })
     }
 
     const handleSubmit = async (e) => {
@@ -60,9 +60,13 @@ const Signup = () => {
                             onChange={(e) => setInputs({ ...inputs, confirmpassword: e.target.value })}
                             className="px-3 py-2 outline-none rounded-md" type="password" name="password" placeholder="Re Enter Password" />
                     </div>
-                    <CheckButton onCheckboxChange ={handleOnCheckboxChange} selectedGender = {inputs.gender} />
+                    <CheckButton onCheckboxChange={handleOnCheckboxChange} selectedGender={inputs.gender} />
 
-                    <button className="bg-blue-500 font-bold mt-1 rounded-md cursor-pointer text-white px-4 py-2">SignUp</button>
+                    <button className="bg-blue-500 font-bold mt-1 rounded-md cursor-pointer text-white px-4 py-2">
+                        {
+                            loading ? <span className='loading loading-spinner'></span> : "Sign Up"
+                        }
+                    </button>
                 </form>
                 <h1 className="mt-4 text-center">Already Have an Account. <Link to="/login" className="text-blue-500 cursor-pointer">Login</Link></h1>
             </div>
