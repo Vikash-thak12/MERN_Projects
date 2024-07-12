@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CheckButton from './CheckButton';
 import useSignup from '../hooks/useSignup';
 
 const Signup = () => {
+    // const navigate = useNavigate()
 
     const [inputs, setInputs] = useState({
         fullname: '',
@@ -24,6 +25,7 @@ const Signup = () => {
         e.preventDefault()
         console.log(inputs);
         await signup(inputs)
+        // navigate('/login')
     }
 
 
