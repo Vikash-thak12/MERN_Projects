@@ -5,8 +5,8 @@ import CheckButton from './CheckButton';
 
 const Signup = () => {
     return (
-        <div className="w-full flex items-center justify-center bg-blur">
-            <div className="rounded-lg w-1/4 px-5 py-4 bg-gray-700 backdrop-filter backdrop-blur-lg">
+        <div className="w-full flex items-center justify-center">
+            <div className="rounded-lg w-1/4 px-5 py-4 backdrop-filter backdrop-blur-3xl">
                 <h1 className="text-center text-3xl">SignUp <span className="text-blue-600 cursor-pointer">ChatApp</span></h1>
                 <form className="flex flex-col gap-3 mt-5">
                 <div className="flex flex-col gap-1">

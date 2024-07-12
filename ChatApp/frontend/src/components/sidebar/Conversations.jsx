@@ -2,7 +2,9 @@ import Conversation from "./Conversation";
 
 const Conversations = () => {
   return (
-    <div>
+    <div className="overflow-auto h-[400px]">
+        <Conversation />
+        <Conversation />
         <Conversation />
         <Conversation />
         <Conversation />

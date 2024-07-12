@@ -11,9 +11,9 @@ const Message = () => {
                     </div>
                 </div>
                 <div className="chat-header">
-                    Obi-Wan Kenobi
+                    Vikash Thakur
                 </div>
-                <div className="chat-bubble">You were the Chosen One!</div>
+                <div className="chat-bubble">Hi, How are you ?</div>
                     <time className="text-xs chat-footer opacity-50">12:45</time>
                 {/* <div className="chat-footer opacity-50">Delivered</div> */}
             </div>

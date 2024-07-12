@@ -8,7 +8,7 @@ const Sidebar = () => {
         <>
             <div className="w-1/2 p-2 relative">
                 <InputField />
-                <div className="divider color-white"></div>
+                <div className="divider color-white mb-0"></div>
                 <Conversations />
                 <LogoutButton />
             </div>

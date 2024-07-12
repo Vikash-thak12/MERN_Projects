@@ -5,7 +5,7 @@ const Conversation = () => {
             <div className="w-full rounded-md px-3 py-2 hover:bg-sky-500 text-white transition cursor-pointer flex  items-center justify-between">
                 <div className="flex items-center gap-2">
                     <div className="avatar online">
-                        <div className="w-12 rounded-full">
+                        <div className="w-10 rounded-full">
                             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
                     </div>
