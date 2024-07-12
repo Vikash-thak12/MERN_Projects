@@ -13,9 +13,13 @@ const Signup = () => {
         gender: ''
     })
 
-    const handleSubmit = (e) => {
+    const handleOnCheckboxChange = (gender) => {
+        setInputs({...inputs, gender})
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(inputs);
+        await Signup(inputs)
     }
 
 
@@ -52,7 +56,7 @@ const Signup = () => {
                             onChange={(e) => setInputs({ ...inputs, confirmpassword: e.target.value })}
                             className="px-3 py-2 outline-none rounded-md" type="password" name="password" placeholder="Re Enter Password" />
                     </div>
-                    <CheckButton />
+                    <CheckButton onCheckboxChange ={handleOnCheckboxChange} selectedGender = {inputs.gender} />
 
                     <button className="bg-blue-500 font-bold mt-1 rounded-md cursor-pointer text-white px-4 py-2">SignUp</button>
                 </form>
