@@ -7,6 +7,8 @@ const useLogin = () => {
     const { setAuthUser } = useAuthContext()
 
     const login = async (gmail, password) => {
+        const success = handleInputErrors({gmail, password})
+        if(!success) return false
         setLoading(true)
         try {
             const res = await fetch("http://localhost:8000/api/auth/login", {
@@ -14,17 +16,23 @@ const useLogin = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ gmail, password })
             })
+            // console.log(res)
             const data = await res.json();
-            if (data.error) {
-                throw new Error(data.error)
+            console.log(data);
+
+            if(!data.success) {
+                toast.error(data.Error)
+            }
+            if(data.success) {
+                setTimeout(() => {
+                    toast.success(`Welcome back ${data.userDetails.gender === "male" ? "Mr." : "Mrs."} ${data.userDetails.fullname}`)
+                }, 1000);
+
+                localStorage.setItem("chat-user", JSON.stringify(data))
+                setAuthUser(data)
             }
 
-            localStorage.setItem("chat-user", JSON.stringify(data))
-            setAuthUser(data)
-            console.log(data.userDetails);
-            setTimeout(() => {
-                toast.success(`Welcome back ${data.userDetails.gender === "male" ? "Mr." : "Mrs."} ${data.userDetails.fullname}`)
-            }, 2000);
+            // console.log(data.userDetails);
 
         } catch (error) {
             toast.error(error.message)
@@ -37,3 +45,13 @@ const useLogin = () => {
 }
 
 export default useLogin
+
+
+function handleInputErrors({gmail, password}) {
+    if(!gmail || !password) {
+        toast.error("Please fill all the fields")
+        return false
+    }
+
+    return true
+}

@@ -25,7 +25,7 @@ const useSignup = () => {
 
             const data = await res.json();
             toast.success("Signup successful!");
-            console.log(data);
+            // console.log(data);
 
             //setting the localstorage and updating the auth user
             localStorage.setItem("chat-user", JSON.stringify(data))

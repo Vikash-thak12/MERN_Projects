@@ -4,8 +4,8 @@ import useLogin from "../hooks/useLogin";
 
 
 const Login = () => {
-    const [gmail, setGmail] = useState()
-    const [password, setPassword] = useState()
+    const [gmail, setGmail] = useState("")
+    const [password, setPassword] = useState("")
 
     const { loading, login } = useLogin()
 
