@@ -18,7 +18,6 @@ const useLogin = () => {
             })
             // console.log(res)
             const data = await res.json();
-            console.log(data);
 
             if(!data.success) {
                 toast.error(data.Error)
@@ -35,7 +34,7 @@ const useLogin = () => {
             // console.log(data.userDetails);
 
         } catch (error) {
-            toast.error(error.message)
+            toast.error(error.Error)
         } finally {
             setLoading(false)
         }
