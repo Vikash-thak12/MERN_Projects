@@ -1,6 +1,9 @@
+import useGetConversations from "../../hooks/useGetConversations";
 import Conversation from "./Conversation";
 
 const Conversations = () => {
+  const {conversations} = useGetConversations();
+  console.log(conversations);
   return (
     <div className="overflow-auto h-[400px]">
         <Conversation />
