@@ -57,7 +57,7 @@ userSchema.static("matchpassword", async function(email, password) {
 
     if(hashedpassword !== userProvidedHash) throw new Error("Incorrect Password")
 
-    return  {...user, password: undefined, salt: undefined}
+    return  user;
 
 })
 
