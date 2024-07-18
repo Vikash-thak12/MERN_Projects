@@ -15,19 +15,25 @@ router.get("/signin", (req, res) => {
 router.post("/signup", async (req, res) => {
     const { fullname, email, password } = req.body;
     await userModel.create({
-        fullname, 
+        fullname,
         email,
         password
     })
 
     return res.redirect("/")
-    
+
 })
 
 router.post("/signin", async (req, res) => {
     const { email, password } = req.body;
-    const user = await userModel.matchpassword(email, password)
-    return res.redirect("/")
+    try {
+        const token = await userModel.matchpasswordAndGenerateToken(email, password)
+        return res.cookie("Token", token).redirect("/")
+    } catch (error) {
+        return res.render("signin", {
+            error: "Incorrect Email or Password",
+        }) 
+    }
 
 })
 

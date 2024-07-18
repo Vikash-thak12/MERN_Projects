@@ -5,7 +5,12 @@
     <title>Sign In</title>
   </head>
   <body>
-    <%- include("./partials/nav") %>
+
+    <!-- This is navbar -->
+    <%- include("./partials/nav") %> 
+
+
+    <!-- main container for the login -->
     <div class="container mt-4">
       <form action="/user/signin" method="post">
         <div class="mb-3">
@@ -30,6 +35,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
+    <!-- This is the script part -->
     <%- include("./partials/script") %>
   </body>
 </html>

@@ -2,7 +2,7 @@ import JWT from "jsonwebtoken"
 
 const secretKey = "Vikash@123####"
 
-function generateTokenForUser(user) {
+export function generateTokenForUser(user) {
     const payload = {
         _id: user._id,
         fullname: user.fullname,
@@ -14,12 +14,8 @@ function generateTokenForUser(user) {
     return token
 }
 
-function validation(token) {
+export function validation(token) {
     const payload = JWT.verify(token, secretKey)
     return payload;
 }
 
-module.exports = {
-    generateTokenForUser, 
-    validation
-}
