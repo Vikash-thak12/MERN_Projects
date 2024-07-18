@@ -8,6 +8,10 @@ router.get("/signup", (req, res) => {
     return res.render("signup")
 })
 
+router.get("/signin", (req, res) => {
+    return res.render("signin")
+})
+
 router.post("/signup", async (req, res) => {
     const { fullname, email, password } = req.body;
     await userModel.create({
@@ -18,6 +22,14 @@ router.post("/signup", async (req, res) => {
 
     return res.redirect("/")
     
+})
+
+router.post("/signin", async (req, res) => {
+    const { email, password } = req.body;
+    const user = await userModel.matchpassword(email, password)
+    console.log("User", user);
+    return res.redirect("/")
+
 })
 
 export default router
