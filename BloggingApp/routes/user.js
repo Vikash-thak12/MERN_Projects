@@ -37,4 +37,8 @@ router.post("/signin", async (req, res) => {
 
 })
 
+router.get("/logout", (req, res) => {
+    res.clearCookie("Token").redirect("/")
+})
+
 export default router

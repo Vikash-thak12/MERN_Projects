@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 
 import UserRoutes from "./routes/user.js"
+import blogRoutes from "./routes/blog.js"
 import { checkForAuthenticationCookie } from "./middlewares/authentication.js";
 
 const app = express();
@@ -18,10 +19,13 @@ app.use(checkForAuthenticationCookie("Token"))
 
 
 app.get("/", (req,res) => {
-    res.render("home")
+    res.render("home", {
+        user: req.user
+    })
 })
 
 app.use("/user", UserRoutes)
+app.use("/blog", blogRoutes)
 
 mongoose.connect("mongodb://localhost:27017/blogiFy").then((e) => console.log(`MongoDb Connected`))
 
