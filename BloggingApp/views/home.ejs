@@ -14,14 +14,21 @@
     <%- include("./partials/nav") %>
 
     <div class="container mt-3" style="padding: 10px">
-      <div class="row row-cols-3">
+      <div class="row row-cols-4">
         <% blogs.forEach(blog => { %>
         <div class="col  custom-row-gap">
           <div class="card col" style="width: 18rem">
             <img src="<%= blog.coverImage %>" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title" style="height: 80px"><%= blog.title %></h5>
-              <a href="/blog/<%= blog._id %>" class="btn btn-primary">view</a>
+              <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read</a> 
+                <div style="display: flex; flex-direction: column;">
+                  <span style="font-weight: bold; padding: 0; margin: 0;">Created By</span>
+                  <span style="font-weight: bold; padding: 0; margin: 0;"><%= blog.createdBy.fullname %></span>
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>

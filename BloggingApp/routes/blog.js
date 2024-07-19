@@ -30,7 +30,6 @@ router.get("/addblog", (req, res) => {
 router.get("/:id", async (req, res) => {
     const blog = await blogModel.findById(req.params.id).populate("createdBy")
     const comments = await CommentModel.find({ blogId: req.params.id }).populate("createdBy")
-    console.log("comments", comments);
     return res.render("blog", {
         user: req.user,
         blog,
