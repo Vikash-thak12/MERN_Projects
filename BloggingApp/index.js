@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import UserRoutes from "./routes/user.js"
 import blogRoutes from "./routes/blog.js"
 import { checkForAuthenticationCookie } from "./middlewares/authentication.js";
+import blogModel from "./models/blog.js"
 
 const app = express();
 const PORT = 8000
@@ -16,11 +17,14 @@ app.set("views", path.resolve("./views"))
 app.use(express.urlencoded({ extended: false}))
 app.use(cookieParser())
 app.use(checkForAuthenticationCookie("Token"))
+app.use(express.static(path.resolve("./public")))
 
 
-app.get("/", (req,res) => {
+app.get("/", async (req,res) => {
+    const allblogs = await blogModel.find({})
     res.render("home", {
-        user: req.user
+        user: req.user,
+        blogs: allblogs
     })
 })
 
