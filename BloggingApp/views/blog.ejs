@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Blog</title>
+    <style>
+        pre {
+            white-space: pre-wrap; /* Allows text to wrap */
+            word-wrap: break-word; /* Breaks long words */
+            overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>  
+    <%- include("./partials/nav") %>
+    <div class="container mt-4" style="background-color: rgb(214, 209, 209);">
+        <h1><%= blog.title %></h1>
+        <img src="<%= blog.coverImage %>" width="600px">
+        <pre><%= blog.body %></pre>
+    </div>
+    <div class="container mb-5 mt-2" style="padding: 5px">
+        <img src="<%= blog.createdBy.profileImage  %>" width="40px"> <%= blog.createdBy.fullname %>
+
+    </div>
+    <%- include("./partials/script") %>
+</body>
+</html>

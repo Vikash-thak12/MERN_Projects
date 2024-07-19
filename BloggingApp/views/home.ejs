@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("./partials/head") %>
     <title>Home</title>
-</head>
-<body>
+    <style>
+        /* Custom CSS to adjust the gap between rows */
+        .custom-row-gap {
+          margin-bottom: 20px; /* Adjust this value to your preferred gap */
+        }
+      </style>
+  </head>
+  <body>
     <%- include("./partials/nav") %>
-    <div class="container mt-4" style="display: flex; justify-content: start; gap: 5;">
+
+    <div class="container mt-3" style="padding: 10px">
+      <div class="row row-cols-3">
         <% blogs.forEach(blog => { %>
-            <div class="card mt-2" style="width: 18rem;">
-                <img src="<%= blog.coverImage %>" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">view</a>
-                </div>
-              </div>
+        <div class="col  custom-row-gap">
+          <div class="card col" style="width: 18rem">
+            <img src="<%= blog.coverImage %>" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title" style="height: 80px"><%= blog.title %></h5>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">view</a>
+            </div>
+          </div>
+        </div>
         <% }) %>
+      </div>
     </div>
     <%- include("./partials/script") %>
-</body>
+  </body>
 </html>
