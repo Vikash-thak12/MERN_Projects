@@ -27,9 +27,9 @@ const Login = () => {
   const getInputData = async (e) => {
     e.preventDefault();
     dispatch(setLoading(true))
-    if(islogin) {
+    if (islogin) {
       //Login
-      const user = {email, password};
+      const user = { email, password };
       try {
         const res = await axios.post(`${API_END_POINT}/login`, user, {
           headers: {
@@ -38,9 +38,13 @@ const Login = () => {
           withCredentials: true
         });
         // console.log(res);
-        if(res.data.success) {
+        if (res.data.success) {
           toast.success(res.data.message);
         }
+
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('user', JSON.stringify(res.data.user));
+
         // console.log(res.data.user);
         dispatch(setUser(res.data.user))
         navigate("/browse")
@@ -53,7 +57,7 @@ const Login = () => {
     } else {
       // Signup
       dispatch(setLoading(true))
-      const user = {fullname, email, password};
+      const user = { fullname, email, password };
       try {
         const res = await axios.post(`${API_END_POINT}/signup`, user, {
           headers: {
@@ -62,7 +66,7 @@ const Login = () => {
           withCredentials: true
         });
         console.log(res);
-        if(res.data.success) {
+        if (res.data.success) {
           toast.success(res.data.message);
         }
         setIslogin(true)
@@ -74,9 +78,9 @@ const Login = () => {
         dispatch(setLoading(false))
       }
     }
-    setFullname("") 
+    setFullname("")
     setEmail("")
-    setPassword("") 
+    setPassword("")
   }
   return (
     <div className='h-screen bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${bg})` }}>

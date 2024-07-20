@@ -21,9 +21,12 @@ const Header = () => {
     try {
       const res = await axios.get(`${API_END_POINT}/logout`)
       console.log(res);
-      if(res.data.success) {
+      if (res.data.success) {
         toast.success(res.data.Message)
       }
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+
       dispatch(setUser(null))
       navigate("/")
     } catch (error) {
