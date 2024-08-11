@@ -4,7 +4,6 @@ export function checkForAuthenticationCookie(cookieName) {
     return (req, res, next) => {
         const tokenCookieValue = req.cookies[cookieName]
         if(!tokenCookieValue) {
-            // return res.status(401).send('Unauthorized');
             return next();
         }
 
